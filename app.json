@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "SALA Menu",
+    "slug": "sala-menu",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#cccccc"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.naymyolwin.salamenu"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#cccccc",
+        "foregroundImage": "./assets/android-icon-foreground.png"
+      },
+      "package": "com.naymyolwin.salamenu"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-asset",
+      "expo-web-browser",
+      "expo-font"
+    ]
+  }
+}
