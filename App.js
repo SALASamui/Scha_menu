@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
-import {MAIN_MENU, THEMES_MENU, WHATS_ON_MENU} from "./data"
+import { MAIN_MENU, THEMES_MENU, WHATS_ON_MENU } from "./data";
 import {
   useFonts,
-  Montserrat_400Regular,
-  Montserrat_700Bold,
-} from "@expo-google-fonts/montserrat";
+  Roboto_400Regular,
+  Roboto_700Bold,
+  Roboto_800ExtraBold
+} from "@expo-google-fonts/roboto";
 import {
   View,
   Text,
@@ -25,6 +26,15 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_700Bold,
+    Roboto_800ExtraBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <SafeAreaProvider>
       <MainApp />
@@ -157,8 +167,13 @@ function MainApp() {
 
         <LinearGradient
           //colors={["transparent", "rgba(0,0,0,0.9)"]}
-          colors={["rgba(0,0,0,0.0)","rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)", "rgba(0,0,0,0.9)"]}
-          locations={[0.0,0.3, 0.7, 0.9]}
+          colors={[
+            "rgba(0,0,0,0.0)",
+            "rgba(0,0,0,0.3)",
+            "rgba(0,0,0,0.7)",
+            "rgba(0,0,0,0.9)",
+          ]}
+          locations={[0.0, 0.3, 0.7, 0.9]}
           style={{
             position: "absolute",
             top: "40%",
@@ -229,13 +244,15 @@ function MainApp() {
 
 const styles = StyleSheet.create({
   overlayText: {
-    fontFamily: "ROBOTO_800Bold",
+    fontFamily: "Roboto_800ExtraBold",
     color: "#fff",
     fontSize: 18,
     fontWeight: "800",
   },
   subText: {
+    fontFamily: "Roboto_400Regular",
     color: "#fff",
+    fontWeight: "400",
   },
   versionText: {
     color: "#fff",
