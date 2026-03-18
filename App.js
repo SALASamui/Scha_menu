@@ -207,7 +207,9 @@ function MainApp() {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "rgba(120, 134, 145, 0.5)" }}>
+    <SafeAreaView
+      style={{ flex: 1, backgroundColor: "rgba(120, 134, 145, 0.5)" }}
+    >
       <View style={styles.appBar}>
         {currentScreen !== "main" ? (
           <TouchableOpacity onPress={goBack} style={styles.backButton}>
