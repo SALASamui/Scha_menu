@@ -4,7 +4,7 @@ import {
   useFonts,
   Roboto_400Regular,
   Roboto_700Bold,
-  Roboto_800ExtraBold
+  Roboto_800ExtraBold,
 } from "@expo-google-fonts/roboto";
 import {
   View,
@@ -199,8 +199,30 @@ function MainApp() {
         : WHATS_ON_MENU;
   const version = currentScreen === "main" ? versionNumber : "";
 
+  const getTitle = () => {
+    if (currentScreen === "main") return "SALA Restaurant";
+    if (currentScreen === "Themes") return "Themes";
+    if (currentScreen === "What's on") return "What's on";
+    return "";
+  };
+
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#9d9d9d" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "rgba(120, 134, 145, 0.5)" }}>
+      <View style={styles.appBar}>
+        {currentScreen !== "main" ? (
+          <TouchableOpacity onPress={goBack} style={styles.backButton}>
+            <Text style={styles.backText}>‹</Text>
+          </TouchableOpacity>
+        ) : (
+          <View style={styles.backPlaceholder} />
+        )}
+
+        <Text style={styles.title}>{getTitle()}</Text>
+
+        {/* Right side placeholder for balance */}
+        <View style={styles.backPlaceholder} />
+      </View>
+
       <Animated.View
         style={{ flex: 1, transform: [{ translateX: slideAnim }] }}
       >
@@ -258,5 +280,31 @@ const styles = StyleSheet.create({
     color: "#fff",
     textAlign: "right",
     paddingRight: 10,
+  },
+  appBar: {
+    height: 60,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#788691",
+  },
+
+  backButton: {
+    position: "absolute",
+    left: 15,
+    height: "100%",
+    justifyContent: "center",
+  },
+
+  title: {
+    color: "#fff",
+    fontSize: 18,
+    fontFamily: "Roboto_700Bold",
+    textAlign: "center",
+  },
+
+  backText: {
+    color: "#fff",
+    fontSize: 34,
+    fontWeight: "bold",
   },
 });
