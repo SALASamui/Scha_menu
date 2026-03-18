@@ -13,14 +13,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.naymyolwin.salamenu"
+      "bundleIdentifier": "com.naymyolwin.schamenu"
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#cccccc",
         "foregroundImage": "./assets/android-icon-foreground.png"
       },
-      "package": "com.naymyolwin.salamenu"
+      "package": "com.naymyolwin.schamenu"
     },
     "web": {
       "favicon": "./assets/favicon.png"
