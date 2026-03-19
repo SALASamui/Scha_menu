@@ -200,7 +200,7 @@ function MainApp() {
   const version = currentScreen === "main" ? versionNumber : "";
 
   const getTitle = () => {
-    if (currentScreen === "main") return "SALA Restaurant";
+    if (currentScreen === "main") return "The Tent Restaurant";
     if (currentScreen === "Themes") return "Themes";
     if (currentScreen === "What's on") return "What's on";
     return "";
